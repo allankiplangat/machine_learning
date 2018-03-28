@@ -32,3 +32,11 @@ dependant_variable = labelencoder_dependant_variable.fit_transform(dependant_var
 # Splitting the data into the Training set and Test set
 from sklearn.cross_validation import train_test_split
 feature_matrix_train, feature_matrix_test, dependant_variable_train, dependant_variable_test = train_test_split(feature_matrix, dependant_variable, test_size = 0.2, random_state = 0)
+
+# Feature Scaling
+from sklearn.preprocessing import StandardScaler
+standard_scaler = StandardScaler() 
+feature_matrix_train = standard_scaler.fit_transform(feature_matrix_train)
+feature_matrix_test = standard_scaler.transform(feature_matrix_test)
+
+
