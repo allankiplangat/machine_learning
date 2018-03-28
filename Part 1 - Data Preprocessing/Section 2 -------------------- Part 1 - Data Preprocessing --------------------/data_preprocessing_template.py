@@ -28,3 +28,7 @@ feature_matrix = onehotencoder.fit_transform(feature_matrix).toarray()
 # Encoding the dependant variable
 labelencoder_dependant_variable = LabelEncoder()
 dependant_variable = labelencoder_dependant_variable.fit_transform(dependant_variable)
+
+# Splitting the data into the Training set and Test set
+from sklearn.cross_validation import train_test_split
+feature_matrix_train, feature_matrix_test, dependant_variable_train, dependant_variable_test = train_test_split(feature_matrix, dependant_variable, test_size = 0.2, random_state = 0)
